@@ -24,23 +24,21 @@ pragma solidity ^0.8.19;
 }
 */
 
+import {PriceConverter} from "./PriceConverter.sol";
+
+
 contract FundMe {
-    uint256 public minimumUSD = 5;
+    using PriceConverter for uint256;
+    uint256 public minimumUSD = 5e18;
+
+    address[] public funders;
+    mapping(address funder => uint256 amountFunded) public addressToAmountFunded;
+    
     function fund() public payable {
-        require(msg.value >= minimumUSD, "didn't send enough ETH");
+        msg.value.getConversionRate();
+       require(msg.value.getConversionRate()>= minimumUSD, "didn't send enough ETH");
+        funders.push(msg.sender);
+        addressToAmountFunded[msg.sender] = addressToAmountFunded[msg.sender] + msg.value;
     }
 
-    function getPrice() public {
-        // Address 0x694AA1769357215DE4FAC081bf1f309aDC325306
-        // ABI AgggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306)
-    }
-
-
-    function getConversionRate() public {}
-
-    // function withdraw() public {}
-
-    function getVersion() public view returns (uint256) {
-        return AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306).version();
-    }
 }

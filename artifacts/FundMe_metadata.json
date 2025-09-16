@@ -6,6 +6,25 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "funder",
+						"type": "address"
+					}
+				],
+				"name": "addressToAmountFunded",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "amountFunded",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "fund",
 				"outputs": [],
@@ -13,27 +32,19 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "getConversionRate",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "getPrice",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "getVersion",
-				"outputs": [
+				"inputs": [
 					{
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
+					}
+				],
+				"name": "funders",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -80,12 +91,28 @@
 		"remappings": []
 	},
 	"sources": {
-		"Remix Fund Me/FundMe.sol": {
-			"keccak256": "0x5281ddf2b8f303e690a79f15ac2b96755bbcfb1029a88884adde65def4685f79",
+		"@chainlink/contracts/src/v0.8/shared/interfaces/AggregatorV3Interface.sol": {
+			"keccak256": "0x257a8d28fa83d3d942547c8e129ef465e4b5f3f31171e7be4739a4c98da6b4f0",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://99475d3e51717d178901fc94a179b757dbf8486792519fdfc001c35e0aa9e567",
-				"dweb:/ipfs/QmRq6Q212zjcTeRmvfxRuLqCRDNKEJ7CbHnhRAuD9C9i3z"
+				"bzz-raw://6d39e11b1dc7b9b8ccdabbc9be442ab7cda4a81c748f57e316dcb1bcb4a28bf9",
+				"dweb:/ipfs/QmaG6vz6W6iEUBsbHSBob5mdcitYxWjoygxREHpsJHfWrS"
+			]
+		},
+		"Remix Fund Me/FundMe.sol": {
+			"keccak256": "0xaffed5f9d13081b23f3ccb3449aaab329b6d75d3a8e8c3d75cbd7214a2e3bd6b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c2c5688e3f33730f5257e4ca0573caad856ef8a763596fe4a70a7282757ef8fd",
+				"dweb:/ipfs/Qmc4Vc9htpK4fVb39nCBkL92QhMYTgGf9XfGJt9RrUfP8K"
+			]
+		},
+		"Remix Fund Me/PriceConverter.sol": {
+			"keccak256": "0x568fb553d1b17b9fe554f5de4420cf9a42cd0087b8bed7e50514a1d303e0bac5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://90c2478e7abbdeabc8db017e2067d6acc098dfc0a8ca8b528f7f3f84da4f804a",
+				"dweb:/ipfs/QmPzAo5eYWVVaATQfVJLJ9UskJ8LsTTAmht2LErj77AcMi"
 			]
 		}
 	},
